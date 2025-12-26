@@ -4,7 +4,7 @@ from dash import Dash, dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 from dash_extensions.enrich import DashProxy, Output, Input, MultiplexerTransform
 
-df = pd.read_csv(r"C:\Users\Omar AbdElpaq\OneDrive\Desktop\Final Projects\DS\Customers_Fakedata_Cleaned.csv")
+df = pd.read_csv(r"Customers_Fakedata_Cleaned.csv")
 df.columns = df.columns.str.strip()
 df['PurchaseDate'] = pd.to_datetime(df['PurchaseDate'], errors='coerce')
 df['Month'] = df['PurchaseDate'].dt.month
@@ -121,3 +121,4 @@ def update_dashboard(selected_genders, selected_months, selected_categories):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
